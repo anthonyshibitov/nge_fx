@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "Mincho";
+  src: url("/MSMINCHO.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Matisse";
+  src: url("/Matisse.otf") format("opentype");
+}
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.test {
+  font-family: "Mincho";
+  color: #ec833e;
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-shadow: 0px 0px 1rem #ec833e, 0px 0px 2rem #ec833e, 0px 0px 0.1rem #ec833e;
+  animation: blink 15s linear infinite;
+  border: 1px solid #ec833e;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1rem #ec833e;
+  width: min-content;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  height: min-content;
+}
+
+.wide {
+  width: fit-content;
+}
+
+.info {
+  /* 94AD8E */
+  text-shadow: 0px 0px 1rem #94AD8E, 0px 0px 2rem #94AD8E, 0px 0px 0.1rem #94AD8E;
+  border: 1px solid #94AD8E;
+  box-shadow: 0px 0px 1rem #94AD8E;
+  color: #94AD8E;
+  animation: infotext 2s linear infinite;
+
+}
+
+.danger {
+  box-shadow: 0px 0px 1rem #D91A02;
+  border: 1px solid #D91A02;
+  text-shadow: 0px 0px 1rem #D91A02, 0px 0px 2rem #D91A02, 0px 0px 0.1rem #D91A02;
+  animation: flashtext 1s linear infinite;
+}
+
+@keyframes infotext {
+  0% {
+    text-shadow: 0px 0px 1rem #94AD8E, 0px 0px 2rem #94AD8E, 0px 0px 0.1rem #94AD8E;
+    border: 1px solid #94AD8E;
+    box-shadow: 0px 0px 1rem #94AD8E;
+    color: #94AD8E;
+  }
+
+  49% {
+    text-shadow: 0px 0px 1rem #94AD8E, 0px 0px 2rem #94AD8E, 0px 0px 0.1rem #94AD8E;
+    border: 1px solid #94AD8E;
+    box-shadow: 0px 0px 1rem #94AD8E;
+    color: #94AD8E;
+  }
+  
+  50% {
+    text-shadow: 0px 0px 1rem white, 0px 0px 2rem white, 0px 0px 0.1rem white;
+    border: 1px solid white;
+    box-shadow: 0px 0px 1rem white;
+    color: white;
+  }
+
+  99% {
+    text-shadow: 0px 0px 1rem white, 0px 0px 2rem white, 0px 0px 0.1rem white;
+    border: 1px solid white;
+    box-shadow: 0px 0px 1rem white;
+    color: white;
+  }
+
+  100% {
+    text-shadow: 0px 0px 1rem #94AD8E, 0px 0px 2rem #94AD8E, 0px 0px 0.1rem #94AD8E;
+    border: 1px solid #94AD8E;
+    box-shadow: 0px 0px 1rem #94AD8E;
+    color: #94AD8E;
+  }
+}
+
+@keyframes flashtext {
+  0% {
+    color: #D91A02;
+    text-shadow: 0px 0px 2rem #D91A02, 0px 0px 2rem #D91A02, 0px 0px 0.1rem #D91A02;
+    box-shadow: 0px 0px 1rem #D91A02;
+    border: 1px solid #D91A02;
+  }
+
+  50%{
+    color: #ec833e;
+    text-shadow: 0px 0px 1rem #ec833e, 0px 0px 2rem #ec833e, 0px 0px 0.1rem #ec833e;
+    box-shadow: 0px 0px 1rem #ec833e;
+    border: 1px solid #ec833e;
+  }
+
+  100% {
+    color: #D91A02;
+    text-shadow: 0px 0px 2rem #D91A02, 0px 0px 2rem #D91A02, 0px 0px 0.1rem #D91A02;
+    box-shadow: 0px 0px 1rem #D91A02;
+    border: 1px solid #D91A02;
+  }
+}
+
+.test-holder {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* gap: 2rem; */
+  width: 80vw;
+  margin: 0.5rem;
+}
+
+.test2 {
+  font-family: "Matisse";
+  color: #ec833e;
+  font-size: 3rem;
+  padding: 2rem;
+  text-shadow: 0px 0px 1rem #ec833e, 0px 0px 2rem #ec833e, 0px 0px 0.1rem #ec833e;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: blink 15s linear infinite;
+}
+
+.liner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 9;
+  opacity: 1;
+  animation: blink 15s linear infinite;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0.7;
+  }
+  35% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0.7;
+  }
+  68% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 1;
+  }
+}
+
+.liner-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "Mincho";
+  color: #94AD8E;
+  font-size: 1rem;
+  text-shadow: 0px 0px 1rem #94AD8E, 0px 0px 2rem #94AD8E, 0px 0px 0.1rem #94AD8E;
+  gap: 1rem;
+}
+
+.long {
+  height: 1px;
+  width: 3rem;
+  background-color: #94AD8E;
+}
+
+.longer {
+  height: 1px;
+  width: 100vw;
+  background-color: #94ad8ebe;
+}
+
+#graph {
+  height: 10rem;
+  width: auto;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border: 1px solid #94AD8E;
+  box-shadow: 0px 0px 1rem #94AD8E;
+}
